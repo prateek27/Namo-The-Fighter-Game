@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+        <head>
+		
+		<script src="scripts/jquery-1.10.js"></script>
+		<script src="scripts/blockUI.js"></script>
+		<script src="scripts/jquery.simplemodal.js"></script>
+		<script src="../script/jqeasing.js"></script>
+		<script src="../script/bpopup.js"></script>
+		<link type='text/css' href='css/demo.css' rel='stylesheet' media='screen' />
+		<link type='text/css' href='css/basic.css' rel='stylesheet' media='screen' />
+                <title>NaMo:The Fighter</title>
+                <style>
+                        canvas {
+                                position: absolute;
+                                top: 0px;
+                                left: 0px;
+                                background: transparent;
+								z-index:-1;
+                        }
+						#title{
+						position:absolute;
+						top:10px;
+						
+						left:400px;
+						height:314px;
+						width:552px;
+						z-index:0;
+						}
+						#start_button
+						{
+						cursor:pointer;
+						position:absolute;
+						top:350px;
+						left:550px;
+						width:243px;
+						height:112px;
+						}
+				 #options{
+				 
+				 
+				 }
+				 #namo
+						{
+						position:absolute;
+						top:300px;
+						left:1000px;
+						width:243px;
+						height:112px;
+						}
+						#corrupt
+						{
+						position:absolute;
+						top:300px;
+						left:20px;
+						width:243px;
+						height:112px;
+						}
+				span{
+				font : bold 20px tahoma ;
+				}
+				#fire {
+				
+				position : absolute  ;
+				top : 115px ;
+				
+				}
+				#arrows{
+				position : absolute  ;
+				top : 230px ;
+				
+				}
+				#control{
+				
+				font : bold 30px tahoma ;
+				}
+				</style>
+				
+        </head>
+		<div id="title"><img src="imgs/title.png"></div>
+		<div id="namo"><img src="imgs/namo.png"></div>
+		<div id="corrupt"><img src="imgs/corrupt.png"></div>
+		<div id="start_button" > <img src="imgs/button.png"></div>
+        <body onload="init()">
+                <!-- The canvas for the panning background -->
+                <canvas id="background" width="1366px" height="700px">
+                        Your browser does not support canvas. Please try again with a different browser.
+                </canvas>
+                <script src="scripts/mainIndex.js"></script>
+				<div id="basic-modal-content" style="overflow:hidden;">
+					
+					
+					
+					<p><center><h1><code><span id="control">C O N T R O L S</span></code></center></h1></p>
+					<p><code><img src="imgs/spacebar.png">&nbsp &nbsp &nbsp &nbsp &nbsp<span id="fire"> FIRING<span>  </code></p>
+					<p><code><img src="imgs/arrow_keys.png">&nbsp &nbsp &nbsp &nbsp &nbsp<span id="arrows"> LEFT RIGHT UP DOWN<span>  </code></p>
+		         <center>  <a href="../game.html"> <img src="imgs/easy.png" /></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+					 <a href="../gamehard.html"> <img src="imgs/hard.png" /></a></center>
+			
+				</div>
+				<script>
+		
+		jQuery(function ($) {
+	
+	$('#start_button').click(function (e) {
+		$('#basic-modal-content').modal();
+		document.getElementsByClassName('simplemodal-close')[0].setAttribute('class',"b-close")
+$('#simplemodal-container').bPopup({
+		//onClose: function() { game.restart() },
+		modalClose : false,
+	    easing: 'easeOutBack', //uses jQuery easing plugin
+            speed: 600,
+            transition: 'slideIn'
+        });
+		//return false;
+	});
+});
+		</script>
+				
+        </body>
+</html>
